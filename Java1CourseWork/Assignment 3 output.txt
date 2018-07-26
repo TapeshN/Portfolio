@@ -1,0 +1,50 @@
+    
+     ----jGRASP exec: java Assignment_3 DataS.txt
+    Database Server is Ready for String Lookups!
+    bob
+    String to lookup: bob
+    bob is not in the database!
+    John
+    String to lookup: John
+    John is not in the database!
+    Ralph
+    String to lookup: Ralph
+    Ralph is not in the database!
+    james
+    String to lookup: james
+    james is in the database!
+    <eof>
+    Number of Searches: 4
+    Goodbye!
+    
+     ----jGRASP: operation complete.
+    
+     ----jGRASP exec: java Assignment_3 DataS.txt
+    Database Server is Ready for String Lookups!
+    Test
+    String to lookup: Test
+    Test is not in the database!
+    test
+    String to lookup: test
+    test is not in the database!
+    James
+    String to lookup: James
+    James is in the database!
+    james
+    String to lookup: james
+    james is in the database!
+    Peter
+    String to lookup: Peter
+    Peter is not in the database!
+    1232
+    String to lookup: 1232
+    1232 is not in the database!
+    3jk
+    String to lookup: 3jk
+    3jk is not in the database!
+    <eof>
+    Number of Searches: 7
+    Goodbye!
+    
+     ----jGRASP: operation complete.
+    
