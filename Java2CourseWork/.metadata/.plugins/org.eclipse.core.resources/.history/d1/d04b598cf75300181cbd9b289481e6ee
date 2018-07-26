@@ -1,0 +1,17 @@
+import java.util.*;
+public class openWorkSpace {
+	
+		
+		static double lpow(double x, int n) {
+		    double y = x;
+		    for (int i = 1; i < n; ++i)
+		        y *= x;
+		return y; }
+		
+		public static void main(String[] args) {
+		System.out.println(lpow(4,2));
+	
+	}
+}
+
+
