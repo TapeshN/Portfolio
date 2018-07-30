@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class BattleShipGame {
 
 	//declare and initialize the variables we'll need
@@ -48,8 +48,12 @@ public class BattleShipGame {
 		String result = "miss";				//assume it is a 'miss' unless told otherwise
 		for(int x = 0; x<shipList.size(); x++){		//for all Ships in shipList
 			result = shipList.get(x).checkYourself(userGuess);	//ask the Ship to check the user guess while looking for hit
-			if (result.equals("hit"){
+			if (result.equals("hit")){
 				shipList.remove(x);				//if userGuess hit's ship, remove the ship
+				break;
+			}
+			if (result.equals("kill")){
+				shipList.remove(x);
 				break;
 			}
 		}
@@ -61,13 +65,13 @@ public class BattleShipGame {
 	private void finishGame(){
 		System.out.println("You've sunk all the ships!");
 		if(numOfGuesses <= 18){
-			System.out.println("It only took you + numOfGuesses + " guesses.");
+			System.out.println("It only took you " + numOfGuesses + " guesses.");
 			System.out.println("You got out before your options sank.");
 		} else{
-			System.out.println("Took you long enough. " numOfGuesses + " guesses.);
+			System.out.println("Took you long enough. " + numOfGuesses + " guesses.");
 		}
 
-
+	}
 	public static void main(String[] args) {
 		BattleShipGame game = new BattleShipGame();
 		game.setUpGame();
