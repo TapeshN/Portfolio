@@ -60,8 +60,6 @@ window.onload = function() {
 }
 function ballReset(){
 	if(player1Score >= WINNING_SCORE || player2Score >= WINNING_SCORE) {
-		player1Score = 0;
-		player2Score = 0;
 		showingWinScreen = true;
 	}
 	ballSpeedX = -ballSpeedX;
@@ -122,14 +120,30 @@ function moveEverything() {
 	}
 }
 
-function drawEverything() {
-	if(showingWinScreen){
-		canvasContext.fillStyle = 'white';
-		canvasContext.fillText("Click to Continue",100,100);
-		return;
+function drawNet(){
+	for(var i=0;i<canvas.height;i+=40){
+		colorRect(canvas.width/2-1,i,2,20,'white');
 	}
+}
+
+function drawEverything() {
 	// next line blanks out the screen with black
 	colorRect(0,0,canvas.width,canvas.height,'black');
+	
+
+	if(showingWinScreen){
+		canvasContext.fillStyle = 'white';
+		if(player1Score >= WINNING_SCORE){
+			canvasContext.fillText("Left Player Won!",350,200);
+		} else if(player2Score >= WINNING_SCORE){
+			canvasContext.fillText("Right Player Won!",350,200);
+		}
+		//canvasContext.fillStyle = 'white';
+		canvasContext.fillText("Click to Continue",350,500);
+		return;
+	}
+
+	drawNet();
 
 	// this is left player paddle
 	colorRect(0,paddle1Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'white');
