@@ -26,12 +26,18 @@ function calculateMousePosition(evt){
 	window.onload = function(){
 	canvas = document.getElementById('gameCanvas');
 	canvasContext = canvas.getContext('2d');
-	
 	var framesPerSecond = 30;
+	
 	setInterval(function(){
 		moveEverything();
 		drawEverything();
 	}, 1000/framesPerSecond);
+
+	canvas.addEventListener('mousemove', 
+		function(evt){
+			var mousePos = calculateMousePos(evt);
+			paddle1Y = mousePos.y;
+		});
 }
 
 function moveEverything(){
@@ -56,16 +62,15 @@ function moveEverything(){
 function drawEverything(){
 	//canvas
 	colorRect(0,0,canvas.width, canvas.height, 'black');
-	
 	//left paddle
-	canvasContext.fillRect(0,210,10,100, 'white');
+	colorRect(0,paddle1Y,10,100, 'white');
+
 	//ball
 	colorCircle(ballX, ballY, 10, 'white');
 	
 }
 
 function colorCircle(centerX, centerY, radius, drawColor){
-	
 	canvasContext.fillStyle = drawColor;
 	canvasContext.beginPath();
 	canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true);
