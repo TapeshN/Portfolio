@@ -3,7 +3,7 @@ public class BattleShipGame {
 
 	//declare and initialize the variables we'll need
 	private GameHelper helper = new GameHelper();
-	private ArrayList<Ship> shipList = new ArrayList<Shop>();
+	private ArrayList<Ship> shipList = new ArrayList<Ship>();
 	private int numOfGuesses = 0;
 
 	//make the game board with 3 ships

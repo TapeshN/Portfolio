@@ -11,7 +11,7 @@ public class GameHelper {
 	//method to get userinput and check if userInput is not empty
 	public String getUserInput(String prompt){
 		String inputLine = null;
-		String.out.print(prompt + " ");
+		System.out.print(prompt + " ");
 		try{
 			BufferedReader is = new BufferedReader( new InputStreamReader(System.in));
 			inputLine = is.readLine();	
@@ -50,11 +50,12 @@ public class GameHelper {
 					}
 					if(x>0 && (location % gridLength == 0)){
 							success = false;
-					}else{
+					}
+					} else {
 						//System.out.print("used " + location);
 					}
-		}
-	}
+				}
+			}
 
 		int x = 0;
 		int row = 0;
@@ -67,7 +68,7 @@ public class GameHelper {
 			temp = String.valueOf(alphabet.charAt(column));
 
 			alphaCells.add(temp.concat(Integer.toString(row)));
-			x++
+			x++;
 			//System.out.print(" coord "+x+ = " + alphaCells.get(x-1));
 		}
 		//System.out.println("\n");
