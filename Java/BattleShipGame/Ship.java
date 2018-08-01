@@ -1,15 +1,21 @@
 import java.util.*;
 public class Ship {
-	private ArrayList<String> locationCells;
+	//Ship's instance variables: an ArrayList of cell locations && the Ship's name
+	private ArrayList<String> locationCells;	
 	private String name;
 
-	public void setLocationCells(ArrayList<String> loc){
+
+	//setter method that updates the Ships's location 
+	//Random number provided by the GameHelper.placeShip() method
+	public void setLocationCells(ArrayList<String> loc){	
 		locationCells = loc;
 	}
 
+	//basic setter method
 	public void setName(String n){
 		name = n;
 	}
+	
 
 	public String checkYourself(String userInput){
 		String result = "miss";
